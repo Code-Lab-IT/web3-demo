@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+
+  apache:
+    build: docker/apache
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - developer
+
+networks:
+  developer:
+    attachable: true
